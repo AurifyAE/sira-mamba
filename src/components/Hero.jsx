@@ -203,7 +203,7 @@ export default function Hero() {
                         <img
                             src={goldRefiningRaw}
                             alt="Gold Refining Process"
-                            className="w-full max-w-md h-auto shadow-2xl"
+                            className="w-full max-w-md h-auto rounded-[30px] shadow-2xl"
                         />
                     </div>
                 </div>
