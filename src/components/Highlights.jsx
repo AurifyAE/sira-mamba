@@ -1,7 +1,7 @@
 import React from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion'
-import goldRefining from '../assets/goldRefiningraw.jpg'
+import goldRefining from '../assets/goldRefining.jpg'
 import testing from '../assets/testing.jpg'
 import smelting from '../assets/smelting.jpg'
 import gold1 from '../assets/gold1.png'
