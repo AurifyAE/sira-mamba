@@ -32,32 +32,32 @@ export default function Highlights() {
     ]
 
     return (
-        <section id="services" className="bg-black py-32">
+        <section id="services" className="bg-black py-16 md:py-32">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="space-y-40">
+                <div className="space-y-15 md:space-y-40">
                     {highlights.map((highlight, index) => (
-                        <div 
+                        <div
                             key={highlight.id}
-                            className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}
+                            className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-6 md:gap-12`}
                         >
                             {/* Rectangle Background */}
-                            <div className="w-80vw h-[285px] bg-[#1A1A1A] rounded-full flex items-center justify-center p-12 backdrop-blur-[20px] shadow-[2px_1px_2px_#F2F2F280,-2px_-1px_2px_#F2F2F280]">
-                                <div className={`flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center gap-12 w-full max-w-6xl`}>
+                            <div className="w-full md:w-80vw h-[500px] md:h-[285px] bg-[#1A1A1A] rounded-3xl md:rounded-full flex items-center justify-center p-6 sm:p-12 backdrop-blur-[20px] shadow-[2px_1px_2px_#F2F2F280,-2px_-1px_2px_#F2F2F280]">
+                                <div className={`flex ${index % 2 === 0 ? 'flex-col sm:flex-row' : 'flex-col sm:flex-row-reverse'} items-center gap-4 sm:gap-6 lg:gap-12 w-full max-w-6xl`}>
                                     {/* Image */}
                                     <div className="flex-shrink-0">
                                         <img
                                             src={highlight.image}
                                             alt={highlight.heading}
-                                            className="w-[300px] h-[450px] object-cover rounded-[60px] shadow-2xl"
+                                            className="w-[200px] h-[220px] md:[250px] md:h-[400px] lg:w-[300px] lg:h-[450px] object-cover rounded-[30px] sm:rounded-[60px] shadow-2xl"
                                         />
                                     </div>
 
                                     {/* Content */}
-                                    <div className={`flex-1 space-y-6 ${index % 2 === 0 ? 'px-6' : 'px-20'}`}>
-                                        <h3 className="text-2xl md:text-3xl font-bold text-white font-['Kaisei_Tokumin']">
+                                    <div className={`flex-1 space-y-4 sm:space-y-6 text-center sm:text-left ${index % 2 === 0 ? 'sm:px-4 lg:px-6' : 'sm:px-6 lg:px-20'}`}>
+                                        <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white font-['Kaisei_Tokumin']">
                                             {highlight.heading}
                                         </h3>
-                                        <p className="text-lg text-gray-300 leading-relaxed font-['Instrument_Sans']">
+                                        <p className="text-sm sm:text-base lg:text-lg text-gray-300 leading-relaxed font-['Instrument_Sans']">
                                             {highlight.paragraph}
                                         </p>
                                     </div>

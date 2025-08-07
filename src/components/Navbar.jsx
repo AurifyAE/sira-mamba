@@ -33,7 +33,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Desktop Navigation Items - Right Aligned */}
-                    <div className="hidden md:block bg-[#1A1A1A] px-10 py-1 rounded-full shadow-[2px_1px_2px_#F2F2F280,-2px_-1px_2px_#F2F2F280]">
+                    <div className="hidden lg:block bg-[#1A1A1A] px-10 py-1 rounded-full shadow-[2px_1px_2px_#F2F2F280,-2px_-1px_2px_#F2F2F280]">
                         <div className="flex justify-center items-center space-x-4">
                             {navItems.map((item, index) => (
                                 <React.Fragment key={item.name}>
@@ -52,7 +52,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Mobile menu button */}
-                    <div className="md:hidden">
+                    <div className="lg:hidden">
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-blue-600 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
@@ -87,7 +87,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Navigation Menu */}
-            <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden`}>
+            <div className={`${isMenuOpen ? 'block' : 'hidden'} lg:hidden`}>
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black border-t border-gray-700">
                     {navItems.map((item) => (
                         <a

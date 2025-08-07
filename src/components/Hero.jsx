@@ -52,10 +52,11 @@ export default function Hero() {
         // Animate paragraph to move vertically to center
         const paragraph = paragraphRef.current
         if (paragraph) {
+            const isTablet = window.innerWidth >= 768 && window.innerWidth <= 1024; // Assuming 1024px as the breakpoint for tablet
             paragraph.animate(
                 [
                     { transform: 'translateX(0)', opacity: 1 },
-                    { transform: 'translateX(11vw)', opacity: 1 }
+                    { transform: `translateX(${isTablet ? '22vw' : '11vw'})`, opacity: 1 }
                 ],
                 {
                     duration: 2000,
@@ -68,10 +69,11 @@ export default function Hero() {
         // Animate second h1 to move from ml-30 to ml-4
         const secondH1 = secondH1Ref.current
         if (secondH1) {
+            const isMobile = window.innerWidth <= 768; // Assuming 768px as the breakpoint for mobile
             secondH1.animate(
                 [
-                    { marginLeft: '7.5rem' }, // ml-30 equivalent
-                    { marginLeft: '1rem' }     // ml-4 equivalent
+                    { marginLeft: isMobile ? '2.5rem' : '7.5rem' }, // ml-10 for mobile, ml-30 for desktop
+                    { marginLeft: isMobile ? '0.5rem' : '1rem' }     // ml-4 equivalent
                 ],
                 {
                     duration: 2000,
@@ -85,7 +87,7 @@ export default function Hero() {
     return (
         <section id="home">
         <div 
-            className="relative h-screen overflow-hidden cursor-pointer"
+            className="relative h-[50vh] md:h-screen overflow-hidden cursor-pointer"
             onClick={handleHeroClick}
         >
             {/* Video Background */}
@@ -93,7 +95,7 @@ export default function Hero() {
                 autoPlay
                 muted
                 loop
-                className="absolute inset-0 w-full h-full object-cover z-1"
+                className="absolute inset-0 w-full h-auto md:h-full object-cover z-1"
             >
                 <source src={heroVideo} type="video/mp4" />
                 Your browser does not support the video tag.
@@ -107,7 +109,7 @@ export default function Hero() {
                 ref={leftImageRef}
                 src={leftHero}
                 alt="Left Hero"
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 h-auto w-auto"
+                className="absolute -left-7 md:left-0 top-38 md:top-1/2 transform -translate-y-1/2 z-20 w-[67vw] md:w-[62vw] h-auto lg:w-auto"
             />
 
             {/* Right Hero Image */}
@@ -115,33 +117,33 @@ export default function Hero() {
                 ref={rightImageRef}
                 src={rightHero}
                 alt="Right Hero"
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 h-auto w-auto"
+                className="absolute right-0 md:right-0 top-38 md:top-1/2 transform -translate-y-1/2 z-20 w-[85vw] md:w-[78vw] lg:w-auto h-auto "
             />
 
             {/* Click Here SVG with rotation animation */}
-            <div className="absolute right-1/3 bottom-1/3 z-30">
+            <div className="absolute right-1/5 bottom-1/6 md:bottom-1/4 lg:right-1/3 lg:bottom-1/3 z-30">
                 <img
                     src={ClickHere}
                     alt="Click Here"
-                    className="w-28 h-28 animate-spin-slow"
+                    className="w-20 h-20 md:w-28 md:h-28 animate-spin-slow"
                 />
             </div>
 
             {/* Hero Content */}
-            <div className="relative z-30 flex items-start justify-center h-full pt-70">
+            <div className="relative z-30 flex items-start justify-center h-full pt-40 md:pt-65 lg:pt-70">
                 <div className="text-center text-white">
                     <p 
                         ref={paragraphRef}
-                        className="text-xl md:text-3xl absolute top-60 transform mb-8 font-['Instrument_Sans']"
+                        className="text-xl md:text-3xl absolute top-33 md:top-58 lg:top-60 transform mb-8 font-['Instrument_Sans']"
                     >
                         Do you know how a
                     </p>
-                    <h1 className="inline-block text-4xl md:text-7xl font-bold mb-4 font-['Kaisei_Tokumin']">
+                    <h1 className="inline-block text-3xl md:text-7xl font-bold mb-4 font-['Kaisei_Tokumin']">
                         Gold Bar 
                     </h1>
                     <h1 
                         ref={secondH1Ref}
-                        className="inline-block text-4xl md:text-7xl font-bold ml-30 mb-4 font-['Kaisei_Tokumin']"
+                        className="inline-block text-3xl md:text-7xl font-bold ml-10 lg:ml-30 mb-4 font-['Kaisei_Tokumin']"
                     >
                         is Made?
                     </h1>
