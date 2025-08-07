@@ -1,22 +1,24 @@
 import React from 'react'
-import goldBiscuit from '../assets/hero-gold-biscuit.png'
+import gold995 from '../assets/gold995.png'
+import gold999 from '../assets/gold999.png'
+import goldTT from '../assets/ttBar.png'
 
 
 export default function Products() {
     const products = [
         {
             id: 1,
-            image: goldBiscuit,
+            image: gold995,
             title: "995 Kilo Bar",
         },
         {
             id: 2,
-            image: goldBiscuit,
+            image: gold999,
             title: "999.9 kilo bar",
         },
         {
             id: 3,
-            image: goldBiscuit,
+            image: goldTT,
             title: "TT Bar",
         }
     ]
@@ -36,13 +38,13 @@ export default function Products() {
                     {products.map((product) => (
                         <div key={product.id} className="flex flex-col items-center">
                             {/* Card with Image and Title */}
-                            <div className="w-[265px] h-[380px] rounded-full bg-[#FAFAFA80] backdrop-blur-[20px] shadow-[inset_3px_3px_-3px_rgba(0,0,0,0.3)] p-8 text-center">
+                            <div className="w-[265px] h-[380px] rounded-full bg-[#FAFAFA80] backdrop-blur-[20px] shadow-[inset_3px_3px_-3px_rgba(0,0,0,0.3)] p-8 text-center transition-transform duration-300 hover:scale-105 cursor-pointer">
                                 {/* Image */}
                                 <div className="mb-6">
                                     <img
                                         src={product.image}
                                         alt={product.title}
-                                        className="w-full h-56 object-cover rounded-full mx-auto"
+                                        className="w-full h-56 object-contain mx-auto"
                                     />
                                 </div>
 

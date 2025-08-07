@@ -1,5 +1,5 @@
 import React from 'react'
-import goldBiscuit from '../assets/hero-gold-biscuit.png'
+import metalRefinory from '../assets/metalRefinory.jpg'
 
 export default function About() {
     return (
@@ -11,22 +11,22 @@ export default function About() {
                     <h1 className="text-4xl md:text-4xl font-bold text-[#BB8D30] mb-6 font-['Kaisei_Tokumin']">
                     Trusted Precious Metal Refining Experts in the UAE
                     </h1>
-                    <h2 className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-['Instrument_Sans']">
+                    <h2 className="text-xl md:text-2xl text-white max-w-3xl mx-auto font-['Instrument_Sans']">
                     World-Class Gold  Refinery | Ethical, Secure, and Professional Metal Refining Services
                     </h2>
                 </div>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center py-10">
                         {/* Left Side - Heading and Sub Heading */}
                         <div className="space-y-6 sm:space-y-8">
                             <div>
-                                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 font-['Kaisei_Tokumin']">
-                                    We are a modern Ethical Refinery
+                                <h1 className="text-3xl sm:text-4xl md:text-[45px] font-bold text-white mb-4 sm:mb-6 font-['Kaisei_Tokumin']">
+                                    We are a modern Ethical Gold Refinery
                                 </h1>
                             </div>
                             
                             <div className="space-y-4">
-                                <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-['Instrument_Sans']">
-                                Siramamba Gold Refinery is a state-of-the-art precious metals refinery based in the Sharjah Airport International Free Zone (SAIF Zone), UAE. We specialize in the purification, assaying, and processing of gold, with a strong commitment to ethical sourcing and world-class technology.
+                                <p className="text-base sm:text-lg text-white leading-relaxed font-['Instrument_Sans']">
+                                Siramamba Gold Refinery, based in SAIF Zone, UAE, is a leading facility specializing in gold refining, assaying, and processing. Committed to ethical sourcing, sustainability, and global standards, we deliver high-purity gold solutions to investors, jewelers, and institutions worldwide.
                                 </p>
                             </div>
                         </div>
@@ -34,9 +34,9 @@ export default function About() {
                         {/* Right Side - Image */}
                         <div className="flex justify-center lg:justify-end">
                             <img
-                                src={goldBiscuit}
+                                src={metalRefinory}
                                 alt="SiraMamba Gold Refining"
-                                className="w-full max-w-sm sm:max-w-lg h-auto rounded-lg shadow-2xl"
+                                className="w-full max-w-sm sm:max-w-lg rounded-3xl h-auto shadow-2xl"
                             />
                         </div>
                     </div>
@@ -49,30 +49,30 @@ export default function About() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
                         {/* Column 1 */}
                         <div className="text-left">
-                            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 font-['Kaisei_Tokumin']">
+                            <h3 className="text-xl sm:text-3xl font-bold text-[#BB8D30] mb-3 sm:mb-4 font-['Kaisei_Tokumin']">
                                 Our Mission 
                             </h3>
-                            <p className="text-sm sm:text-lg text-gray-300 leading-relaxed font-['Instrument_Sans'] italic">
+                            <p className="text-sm sm:text-lg text-white leading-relaxed font-['Instrument_Sans'] italic">
                                 To set new global benchmarks in precision gold refining and promote responsible practices within the precious metals industry.
                             </p>
                         </div>
 
                         {/* Column 2 */}
                         <div className="text-left">
-                            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 font-['Kaisei_Tokumin']">
+                            <h3 className="text-xl sm:text-3xl font-bold text-[#BB8D30] mb-3 sm:mb-4 font-['Kaisei_Tokumin']">
                                 Our Vision
                             </h3>
-                            <p className="text-sm sm:text-lg text-gray-300 leading-relaxed font-['Instrument_Sans'] italic">
+                            <p className="text-sm sm:text-lg text-white leading-relaxed font-['Instrument_Sans'] italic">
                                 To become the most trusted name in gold refining in the Middle East, serving global clients with transparency and integrity.
                             </p>
                         </div>
 
                         {/* Column 3 */}
                         <div className="text-left">
-                            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 font-['Kaisei_Tokumin']">
+                            <h3 className="text-xl sm:text-3xl font-bold text-[#BB8D30] mb-3 sm:mb-4 font-['Kaisei_Tokumin']">
                                 Our Team
                             </h3>
-                            <p className="text-sm sm:text-lg text-gray-300 leading-relaxed font-['Instrument_Sans'] italic">
+                            <p className="text-sm sm:text-lg text-white leading-relaxed font-['Instrument_Sans'] italic">
                                 Led by industry veterans with decades of expertise in metallurgy and international trade, our team brings excellence to every process, from smelting to final delivery.
                             </p>
                         </div>

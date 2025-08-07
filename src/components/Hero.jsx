@@ -1,9 +1,10 @@
 import React, { useRef, useState } from 'react'
 import ClickHere from '../assets/click-here.svg'
+import arrowDown from '../assets/arrow-down.svg'
 import heroVideo from '../assets/hero-video.mp4'
 import leftHero from '../assets/left-hero.png'
 import rightHero from '../assets/right-hero.png'
-import goldBiscuit from '../assets/hero-gold-biscuit.png'
+import goldRefiningRaw from '../assets/goldRefiningraw.jpg'
 
 export default function Hero() {
     const leftImageRef = useRef(null)
@@ -150,6 +151,17 @@ export default function Hero() {
                 </div>
             )}
 
+            {/* Arrow Down SVG - shows when click here is hidden */}
+            {clickHereHidden && (
+                <div className="absolute bg-black/50 flex items-center pt-2 pr-[.5px] h-18 w-10 rounded-full bottom-32 left-1/2 transform -translate-x-1/2 z-30 backdrop-blur-[20px]">
+                    <img
+                        src={arrowDown}
+                        alt="Scroll Down"
+                        className="w-8 h-8 md:w-10 md:h-10 animate-bounce"
+                    />
+                </div>
+            )}
+
             {/* Hero Content */}
             <div className="relative z-30 flex items-start justify-center h-full pt-40 md:pt-65 lg:pt-70">
                 <div className="text-center text-white">
@@ -172,23 +184,26 @@ export default function Hero() {
             </div>
         </div>
         {/* Hero Content 2 */}
-        <div className="bg-black py-10">
+        <div className="bg-black py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Left Paragraph and Right Image Layout */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left Paragraph */}
                     <div className="space-y-6">
-                        <p className="text-lg text-gray-300 leading-relaxed font-['Instrument_Sans']">
-                        Gold's journey begins as raw ore or recycled metal, carefully tested through advanced assaying methods to determine its purity. It is then refined using high-precision techniques like fire assay or electrolytic treatment until it reaches 99.99% purity. Once molten, the gold is poured into molds or minted into bars, stamped with its weight, purity, and a unique serial number. Each bar is then inspected, securely packaged, and either vaulted or delivered to trusted hands around the world.
+                        <p className="text-lg font-bold font-['Kaisei_Tokumin'] text-white leading-relaxed">
+                            Gold Refining: From Raw Material to 99.99% Pure Bars
+                        </p>
+                        <p className="text-lg text-white leading-relaxed font-['Instrument_Sans']">
+                        Gold's transformation begins with raw ore or recycled precious metals, which undergo rigorous assaying to determine purity levels. Using advanced techniques such as fire assay or electrolytic refining, the gold is processed to achieve up to 99.99% purity. Once refined, the molten gold is cast into molds or minted into bars, each stamped with its weight, purity, and a unique serial number for traceability. Every gold bar is then carefully inspected, certified, and securely packaged—ready to be vaulted or delivered to clients and institutions around the globe.
                         </p>
                     </div>
 
                     {/* Right Image */}
                     <div className="flex justify-center lg:justify-end">
                         <img
-                            src={goldBiscuit}
+                            src={goldRefiningRaw}
                             alt="Gold Refining Process"
-                            className="w-full max-w-md h-auto rounded-lg shadow-2xl"
+                            className="w-full max-w-md h-auto shadow-2xl"
                         />
                     </div>
                 </div>
