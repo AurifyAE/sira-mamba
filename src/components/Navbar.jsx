@@ -18,7 +18,7 @@ export default function Navbar() {
     ]
 
     return (
-        <nav className="bg-black sticky top-0 z-50 shadow-[0_.2px_40px_#F2F2F280]">
+        <nav className="bg-black sticky top-0 z-50 font-['Instrument_Sans'] shadow-[0_1px_0_#f2f2f280]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     {/* Left-aligned Logo */}

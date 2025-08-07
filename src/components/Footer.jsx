@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8">
                     {/* First Column - Logo and Copyright */}
-                    <div className="md:col-span-6">
+                    <div className="md:col-span-4">
                         <div className="space-y-4 sm:space-y-6">
                             {/* Logo */}
                             <div>
@@ -26,7 +26,7 @@ export default function Footer() {
                     </div>
 
                     {/* Second Column - Navigation Links */}
-                    <div className="md:col-span-3">
+                    <div className="md:col-span-2">
                         <div className="space-y-3 sm:space-y-4">
                             <h3 className="text-white font-semibold text-base sm:text-lg mb-3 sm:mb-4 font-['Kaisei_Tokumin']">
                                 Navigation
@@ -52,7 +52,7 @@ export default function Footer() {
                     </div>
 
                     {/* Third Column - Additional Links */}
-                    <div className="md:col-span-3">
+                    <div className="md:col-span-2">
                         <div className="space-y-3 sm:space-y-4">
                             <h3 className="text-white font-semibold text-base sm:text-lg mb-3 sm:mb-4 font-['Kaisei_Tokumin']">
                                 Quick Links
@@ -74,6 +74,48 @@ export default function Footer() {
                                     </a>
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+
+                    {/* Fourth Column - Address and Phone Numbers */}
+                    <div className="md:col-span-4">
+                        <div className="space-y-3 sm:space-y-4">
+                            <h3 className="text-white font-semibold text-base sm:text-lg mb-3 sm:mb-4 font-['Kaisei_Tokumin']">
+                                Contact Information
+                            </h3>
+                            <div className="space-y-3">
+                                {/* Address */}
+                                <div>
+                                    <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
+                                        400 M2 Warehouse A4-67-68-69 SAIF Zone,<br />
+                                        Sharjah, United Arab Emirates
+                                    </p>
+                                </div>
+                                
+                                {/* Phone Numbers */}
+                                <div className="space-y-2">
+                                    <p className="text-gray-400 text-sm sm:text-base cursor-pointer"
+                                    onClick={() => window.location.href = 'mailto:info@siramamba.ae'}
+                                    >
+                                        info@siramamba.ae
+                                    </p>
+                                    <p className="inline text-gray-400 text-sm sm:text-base cursor-pointer"
+                                    onClick={() => window.location.href = 'tel:+971558875539'}
+                                    >
+                                        +971 55 887 5539,
+                                    </p>
+                                    <p className="inline md:inline-block lg:inline ml-3 md:m-0 lg:ml-3 text-gray-400 text-sm sm:text-base cursor-pointer"
+                                    onClick={() => window.location.href = 'tel:+971542650191'}
+                                    >
+                                        +971 54 265 0191,
+                                    </p>
+                                    <p className="mt-1 md:mt-0 lg:mt-1 text-gray-400 text-sm sm:text-base cursor-pointer"
+                                    onClick={() => window.location.href = 'tel:+971565956353'}
+                                    >
+                                        +971 56 595 6353
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

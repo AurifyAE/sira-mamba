@@ -26,7 +26,7 @@ export default function Highlights() {
         {
             id: 4,
             image: goldBiscuit,
-            heading: "Assaying & Testing",
+            heading: "Minting & Customized Products",
             paragraph: "Offer bespoke die-made minted bars, coins, medals, or branded designs tailored to customer requests. Known for creative motifs and secure serial stamping."
         }
     ]

@@ -6,6 +6,15 @@ export default function About() {
         <>
             <section className="bg-black">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Centered Headings */}
+                <div className="text-center mb-10">
+                    <h1 className="text-4xl md:text-4xl font-bold text-[#BB8D30] mb-6 font-['Kaisei_Tokumin']">
+                    Trusted Precious Metal Refining Experts in the UAE
+                    </h1>
+                    <h2 className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-['Instrument_Sans']">
+                    World-Class Gold  Refinery | Ethical, Secure, and Professional Metal Refining Services
+                    </h2>
+                </div>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
                         {/* Left Side - Heading and Sub Heading */}
                         <div className="space-y-6 sm:space-y-8">
@@ -39,31 +48,31 @@ export default function About() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
                         {/* Column 1 */}
-                        <div className="text-center">
+                        <div className="text-left">
                             <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 font-['Kaisei_Tokumin']">
                                 Our Mission 
                             </h3>
-                            <p className="text-sm sm:text-base text-gray-300 text-left leading-relaxed font-['Instrument_Sans'] italic">
+                            <p className="text-sm sm:text-lg text-gray-300 leading-relaxed font-['Instrument_Sans'] italic">
                                 To set new global benchmarks in precision gold refining and promote responsible practices within the precious metals industry.
                             </p>
                         </div>
 
                         {/* Column 2 */}
-                        <div className="text-center">
+                        <div className="text-left">
                             <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 font-['Kaisei_Tokumin']">
                                 Our Vision
                             </h3>
-                            <p className="text-sm sm:text-base text-gray-300 text-left leading-relaxed font-['Instrument_Sans'] italic">
+                            <p className="text-sm sm:text-lg text-gray-300 leading-relaxed font-['Instrument_Sans'] italic">
                                 To become the most trusted name in gold refining in the Middle East, serving global clients with transparency and integrity.
                             </p>
                         </div>
 
                         {/* Column 3 */}
-                        <div className="text-center">
+                        <div className="text-left">
                             <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 font-['Kaisei_Tokumin']">
                                 Our Team
                             </h3>
-                            <p className="text-sm sm:text-base text-gray-300 text-left leading-relaxed font-['Instrument_Sans'] italic">
+                            <p className="text-sm sm:text-lg text-gray-300 leading-relaxed font-['Instrument_Sans'] italic">
                                 Led by industry veterans with decades of expertise in metallurgy and international trade, our team brings excellence to every process, from smelting to final delivery.
                             </p>
                         </div>

@@ -11,11 +11,30 @@ export default function Hero() {
     const paragraphRef = useRef(null)
     const secondH1Ref = useRef(null)
     const [animationsTriggered, setAnimationsTriggered] = useState(false)
+    const [clickHereHidden, setClickHereHidden] = useState(false)
 
     const handleHeroClick = () => {
         if (animationsTriggered) return // Prevent multiple triggers
 
         setAnimationsTriggered(true)
+
+        // Smoothly hide click here image with fade out animation
+        const clickHereElement = document.querySelector('.click-here-image')
+        if (clickHereElement) {
+            clickHereElement.animate(
+                [
+                    { opacity: 1, transform: 'scale(1)' },
+                    { opacity: 0, transform: 'scale(0.8)' }
+                ],
+                {
+                    duration: 500,
+                    easing: 'ease-out',
+                    fill: 'forwards'
+                }
+            ).onfinish = () => {
+                setClickHereHidden(true) // Hide after animation completes
+            }
+        }
 
         // Animate left image to move left and hide
         const leftImage = leftImageRef.current
@@ -121,13 +140,15 @@ export default function Hero() {
             />
 
             {/* Click Here SVG with rotation animation */}
-            <div className="absolute right-1/5 bottom-1/6 md:bottom-1/4 lg:right-1/3 lg:bottom-1/3 z-30">
-                <img
-                    src={ClickHere}
-                    alt="Click Here"
-                    className="w-20 h-20 md:w-28 md:h-28 animate-spin-slow"
-                />
-            </div>
+            {!clickHereHidden && (
+                <div className="absolute right-1/5 bottom-1/6 md:bottom-1/4 lg:right-1/3 lg:bottom-1/3 z-30">
+                    <img
+                        src={ClickHere}
+                        alt="Click Here"
+                        className="click-here-image w-20 h-20 md:w-28 md:h-28 animate-spin-slow"
+                    />
+                </div>
+            )}
 
             {/* Hero Content */}
             <div className="relative z-30 flex items-start justify-center h-full pt-40 md:pt-65 lg:pt-70">
@@ -151,18 +172,8 @@ export default function Hero() {
             </div>
         </div>
         {/* Hero Content 2 */}
-        <div className="bg-black py-20">
+        <div className="bg-black py-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Centered Headings */}
-                <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-4xl font-bold text-[#BB8D30] mb-6 font-['Kaisei_Tokumin']">
-                    Trusted Precious Metal Refining Experts in the UAE
-                    </h1>
-                    <h2 className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-['Instrument_Sans']">
-                    World-Class Gold  Refinery | Ethical, Secure, and Professional Metal Refining Services
-                    </h2>
-                </div>
-
                 {/* Left Paragraph and Right Image Layout */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left Paragraph */}
