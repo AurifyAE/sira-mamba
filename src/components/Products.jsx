@@ -3,7 +3,6 @@ import gold995 from '../assets/gold995.png'
 import gold999 from '../assets/gold999.png'
 import goldTT from '../assets/ttBar.png'
 
-
 export default function Products() {
     const products = [
         {
