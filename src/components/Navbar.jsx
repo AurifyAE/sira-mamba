@@ -26,7 +26,7 @@ export default function Navbar() {
                         <div className="flex items-center">
                             <img 
                                 src={Logo} 
-                                alt="SiraMamba Logo" 
+                                alt="SIRA MAMBA Logo" 
                                 className="h-8 w-auto sm:h-10 md:h-16 lg:w-60"
                             />
                         </div>
