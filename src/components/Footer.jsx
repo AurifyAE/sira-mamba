@@ -100,14 +100,9 @@ export default function Footer() {
                                         info@siramamba.ae
                                     </p>
                                     <p className="inline text-gray-400 text-sm sm:text-base cursor-pointer"
-                                    onClick={() => window.location.href = 'tel:+971558875539'}
+                                    onClick={() => window.location.href = 'tel:+971525647522'}
                                     >
-                                        +971 55 887 5539,
-                                    </p>
-                                    <p className="inline md:inline-block lg:inline ml-3 md:m-0 lg:ml-3 text-gray-400 text-sm sm:text-base cursor-pointer"
-                                    onClick={() => window.location.href = 'tel:+971542650191'}
-                                    >
-                                        +971 54 265 0191,
+                                        +971 52 564 7522,
                                     </p>
                                     <p className="mt-1 md:mt-0 lg:mt-1 text-gray-400 text-sm sm:text-base cursor-pointer"
                                     onClick={() => window.location.href = 'tel:+971565956353'}
