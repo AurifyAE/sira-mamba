@@ -36,7 +36,20 @@ export default function Highlights() {
 
     return (
         <section id="services" className="bg-black py-16 md:py-32">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto">
+                {/* Section Heading */}
+                <motion.div
+                    initial={{ opacity: 0, y: -50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                    className="text-center mb-16 md:mb-24"
+                >
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#BB8D30] font-['Product_Sans']">
+                        Our Services
+                    </h2>
+                </motion.div>
+                
                 <div className="space-y-15 md:space-y-40">
                     {highlights.map((highlight, index) => (
                         <motion.div
@@ -51,58 +64,56 @@ export default function Highlights() {
                             viewport={{ once: true, margin: "-100px" }}
                             className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-6 md:gap-12`}
                         >
-                            {/* Rectangle Background */}
+                            {/* Image - Outside the content block */}
+                            <motion.div 
+                                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
+                                viewport={{ once: true }}
+                                className="flex-shrink-0 z-10 flex items-center justify-center w-1/3"
+                            >
+                                <img
+                                    src={highlight.image}
+                                    alt={highlight.heading}
+                                    className="w-[200px] h-[220px] md:w-[250px] md:h-[400px] lg:w-[300px] lg:h-[450px] object-cover rounded-[30px] sm:rounded-[60px]"
+                                />
+                            </motion.div>
+
+                            {/* Rectangle Background - Content only */}
                             <motion.div 
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.6, delay: index * 0.2 + 0.2 }}
                                 viewport={{ once: true }}
-                                className="w-full md:w-80vw h-[500px] md:h-[285px] bg-[#1A1A1A] rounded-3xl md:rounded-full flex items-center justify-center p-6 sm:p-12 backdrop-blur-[20px] shadow-[2px_1px_2px_#F2F2F280,-2px_-1px_2px_#F2F2F280]"
+                                className={`w-full md:w-2/3 h-[500px] md:h-[285px] bg-[#1A1A1A] opacity-50 rounded-3xl ${index % 2 === 0 ? 'lg:rounded-l-full' : 'lg:rounded-r-full'} flex items-center justify-center p-6 sm:p-12 backdrop-blur-[20px] shadow-[2px_1px_2px_#F2F2F280,-2px_-1px_2px_#F2F2F280]`}
                             >
-                                <div className={`flex ${index % 2 === 0 ? 'flex-col sm:flex-row' : 'flex-col sm:flex-row-reverse'} items-center gap-4 sm:gap-6 lg:gap-12 w-full max-w-6xl`}>
-                                    {/* Image */}
-                                    <motion.div 
-                                        initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
+                                {/* Content */}
+                                <motion.div 
+                                    initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.6, delay: index * 0.2 + 0.6 }}
+                                    viewport={{ once: true }}
+                                    className={`flex-1 space-y-4 sm:space-y-6 text-center sm:text-left ${index % 2 === 0 ? 'sm:px-6 lg:px-20' : 'sm:px-4 lg:px-6'}`}
+                                >
+                                    <motion.h3 
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.5, delay: index * 0.2 + 0.8 }}
                                         viewport={{ once: true }}
-                                        className="flex-shrink-0"
+                                        className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#DCBC7C] font-['Product_Sans']"
                                     >
-                                        <img
-                                            src={highlight.image}
-                                            alt={highlight.heading}
-                                            className="w-[200px] h-[220px] md:[250px] md:h-[400px] lg:w-[300px] lg:h-[450px] object-cover rounded-[30px] sm:rounded-[60px]"
-                                        />
-                                    </motion.div>
-
-                                    {/* Content */}
-                                    <motion.div 
-                                        initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        transition={{ duration: 0.6, delay: index * 0.2 + 0.6 }}
+                                        {highlight.heading}
+                                    </motion.h3>
+                                    <motion.p 
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.5, delay: index * 0.2 + 1.0 }}
                                         viewport={{ once: true }}
-                                        className={`flex-1 space-y-4 sm:space-y-6 text-center sm:text-left ${index % 2 === 0 ? 'sm:px-4 lg:px-6' : 'sm:px-6 lg:px-20'}`}
+                                        className="text-sm sm:text-base lg:text-lg text-white leading-relaxed font-['Instrument_Sans']"
                                     >
-                                        <motion.h3 
-                                            initial={{ opacity: 0, y: 20 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            transition={{ duration: 0.5, delay: index * 0.2 + 0.8 }}
-                                            viewport={{ once: true }}
-                                            className="text-xl sm:text-2xl lg:text-3xl font-bold text-white font-['Kaisei_Tokumin']"
-                                        >
-                                            {highlight.heading}
-                                        </motion.h3>
-                                        <motion.p 
-                                            initial={{ opacity: 0, y: 20 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            transition={{ duration: 0.5, delay: index * 0.2 + 1.0 }}
-                                            viewport={{ once: true }}
-                                            className="text-sm sm:text-base lg:text-lg text-white leading-relaxed font-['Instrument_Sans']"
-                                        >
-                                            {highlight.paragraph}
-                                        </motion.p>
-                                    </motion.div>
-                                </div>
+                                        {highlight.paragraph}
+                                    </motion.p>
+                                </motion.div>
                             </motion.div>
                         </motion.div>
                     ))}

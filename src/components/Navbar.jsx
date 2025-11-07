@@ -1,24 +1,21 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Logo from '../assets/Logo.svg'
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     const navItems = [
-        { name: 'Home', href: '#home', onClick: () => {
-            document.getElementById('home').scrollIntoView({ behavior: 'smooth' })
-        } },
-        { name: 'Services', href: '#services', onClick: () => {
-            document.getElementById('services').scrollIntoView({ behavior: 'smooth' })
-        } },
-        { name: 'Shop', href: '#shop' },
-        { name: 'Gallery', href: '#gallery' },
-        { name: 'Accreditations', href: '#accreditations' },
-        { name: 'Contact', href: '#contact' }
+        { name: 'About', href: '/about' },
+        { name: 'Services', href: '/services' },
+        { name: 'Shops', href: '/products' },
+        { name: 'Gallery', href: '/gallery' },
+        { name: 'Accreditations', href: '/accreditations' },
+        { name: 'Contact', href: '/contact' }
     ]
 
     return (
-        <nav className="bg-black sticky top-0 z-50 font-['Instrument_Sans'] shadow-[0_1px_0_#f2f2f280]">
+        <nav className="bg-black opacity-80 fixed top-0 inset-x-0 z-50 font-['Instrument_Sans'] shadow-[0_1px_0_#f2f2f280]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     {/* Left-aligned Logo */}
@@ -33,19 +30,19 @@ export default function Navbar() {
                     </div>
 
                     {/* Desktop Navigation Items - Right Aligned */}
-                    <div className="hidden lg:block bg-[#1A1A1A] px-10 py-1 rounded-full shadow-[2px_1px_2px_#F2F2F280,-2px_-1px_2px_#F2F2F280]">
+                    <div className="hidden lg:block px-10 py-1">
                         <div className="flex justify-center items-center space-x-4">
                             {navItems.map((item, index) => (
                                 <React.Fragment key={item.name}>
-                                    <a
-                                        href={item.href}
+                                    <Link
+                                        to={item.href}
                                         className="text-white hover:text-gray-300 m-0 px-5 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center"
                                     >
                                         {item.name}
-                                    </a>
-                                    {index < navItems.length - 1 && (
+                                    </Link>
+                                    {/* {index < navItems.length - 1 && (
                                         <span className="bg-white mx-1 w-1 h-1 rotate-45"></span>
-                                    )}
+                                    )} */}
                                 </React.Fragment>
                             ))}
                         </div>
@@ -90,14 +87,14 @@ export default function Navbar() {
             <div className={`${isMenuOpen ? 'block' : 'hidden'} lg:hidden`}>
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black border-t border-gray-700">
                     {navItems.map((item) => (
-                        <a
+                        <Link
                             key={item.name}
-                            href={item.href}
+                            to={item.href}
                             className="text-white hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
                             onClick={() => setIsMenuOpen(false)}
                         >
                             {item.name}
-                        </a>
+                        </Link>
                     ))}
                 </div>
             </div>

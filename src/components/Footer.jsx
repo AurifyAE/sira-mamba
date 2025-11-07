@@ -3,7 +3,7 @@ import logoWhite from '../assets/logoWhite.svg'
 
 export default function Footer() {
     return (
-        <footer className="bg-black py-12 sm:py-16 font-['Instrument_Sans']">
+        <footer className="bg-black pt-12 sm:pt-16 font-['Instrument_Sans']">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8">
                     {/* First Column - Logo and Copyright */}
@@ -114,6 +114,12 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
+            </div>
+            {/* Bottom Copyright Strip */}
+            <div className="mt-12 sm:mt-16 border-t border-gray-800">
+                <p className="text-center text-gray-400 text-xs sm:text-sm py-4">
+                    © 2025 SiraMamba Gold Refinery , Made by 3RCreative
+                </p>
             </div>
         </footer>
     )
