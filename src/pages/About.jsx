@@ -34,7 +34,7 @@ const About = () => {
                 <div className="absolute inset-0 bg-black/40"></div>
                 <div className="relative z-10 flex items-end justify-start h-full">
                     <div className="text-white max-w-6xl p-20">
-                        <h1 className="text-3xl sm:text-3xl lg:text-4xl font-bold mb-6 leading-tight font-['Product_Sans']">
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-['Product_Sans']">
                         Our Story.
                         </h1>
                     </div>

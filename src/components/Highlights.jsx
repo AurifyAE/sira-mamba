@@ -75,11 +75,31 @@ export default function Highlights() {
                                 viewport={{ once: true }}
                                 className="flex-shrink-0 z-10 flex items-center justify-center w-1/3"
                             >
-                                <img
-                                    src={highlight.image}
-                                    alt={highlight.heading}
-                                    className="w-[200px] h-[220px] md:w-[250px] md:h-[400px] lg:w-[300px] lg:h-[450px] object-cover rounded-[30px] sm:rounded-[60px]"
-                                />
+                                <div className="flex flex-col items-center">
+                                    <img
+                                        src={highlight.image}
+                                        alt={highlight.heading}
+                                        className="w-[200px] h-[220px] md:w-[250px] md:h-[400px] lg:w-[300px] lg:h-[450px] object-cover rounded-[30px] sm:rounded-[60px]"
+                                    />
+                                    {/* Animated vertical line below image */}
+                                    {index !== highlights.length - 1 && (
+                                        <div className="relative h-20">
+                                            <motion.div
+                                                initial={{ opacity: 0, height: 0 }}
+                                                whileInView={{ opacity: 1, height: [0, 200, 0] }}
+                                                transition={{
+                                                    duration: 2,
+                                                    delay: index * 0.15 + 0.4,
+                                                    repeat: Infinity,
+                                                    repeatDelay: 0.4,
+                                                    ease: 'easeInOut',
+                                                }}
+                                                viewport={{ once: false, amount: 0.4 }}
+                                                className="w-px bg-[#BB8D30] absolute top-0 left-1/2 -translate-x-1/2 origin-top"
+                                            />
+                                        </div>
+                                    )}
+                                </div>
                             </motion.div>
 
                             {/* Rectangle Background - Content only */}
