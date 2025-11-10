@@ -28,7 +28,7 @@ const About = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#EFEFEF]">
         <section className="relative bg-cover bg-center bg-no-repeat h-[520px]" 
                      style={{ backgroundImage: `url(${aboutBanner})` }}>
                 <div className="absolute inset-0 bg-black/40"></div>
@@ -56,7 +56,7 @@ const About = () => {
           </p>
         </div>
         {/* Right Side: Key Differentiators */}
-        <div className="bg-[#D9D9D9] rounded-3xl p-8 flex flex-col justify-center shadow-sm">
+        <div className="bg-[#FFEECC] rounded-3xl p-8 flex flex-col justify-center shadow-sm">
           <h3 className="text-xl font-semibold text-gray-800 mb-4">Key Differentiators</h3>
           <ul className="list-disc ml-5 space-y-3 text-gray-700">
             <li>Cutting-edge refining, smelting and assaying technology</li>
@@ -117,7 +117,9 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-[#D9D9D9] rounded-lg p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
+                className={`rounded-lg p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow duration-300 ${
+                  index % 2 === 0 ? 'bg-[#FFEECC]' : 'bg-white'
+                }`}
               >
                 <div className="relative flex items-start gap-6 md:gap-8">
                   {/* Large Number */}

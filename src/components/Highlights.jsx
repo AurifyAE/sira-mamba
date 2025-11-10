@@ -1,9 +1,9 @@
 import React from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion'
-import goldRefining from '../assets/goldRefining.jpg'
-import testing from '../assets/testing.jpg'
-import smelting from '../assets/smelting.jpg'
+import goldRefining from '../assets/services/goldRefining.jpg'
+import testing from '../assets/services/testing.png'
+import smelting from '../assets/services/smelting.jpg'
 import gold1 from '../assets/gold1.png'
 
 export default function Highlights() {
@@ -12,7 +12,10 @@ export default function Highlights() {
             id: 1,
             image: goldRefining,
             heading: "Gold Refining (Purification)",
-            paragraph: "Process scrap gold, dore bars, jewellery or bullion to remove impurities (silver, other metals). Deliver high-purity gold (often 99.9% or above). Techniques include chemical leaching, electrolysis, and fire assay analysis"
+            paragraph: [
+                "Process scrap gold, dore bars, jewellery or bullion to remove impurities (silver, other metals).",
+                "Deliver high-purity gold (often 99.9% or above). Techniques include chemical leaching, electrolysis, and fire assay analysis."
+            ]
         },
         {
             id: 2,
@@ -35,7 +38,7 @@ export default function Highlights() {
     ]
 
     return (
-        <section id="services" className="bg-black py-16 md:py-32">
+        <section id="services" className="bg-[#282626] py-16 md:py-32">
             <div className="mx-auto">
                 {/* Section Heading */}
                 <motion.div
@@ -104,15 +107,32 @@ export default function Highlights() {
                                     >
                                         {highlight.heading}
                                     </motion.h3>
-                                    <motion.p 
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.5, delay: index * 0.2 + 1.0 }}
-                                        viewport={{ once: true }}
-                                        className="text-sm sm:text-base lg:text-lg text-white leading-relaxed font-['Instrument_Sans']"
-                                    >
-                                        {highlight.paragraph}
-                                    </motion.p>
+                                    <div className="space-y-3">
+                                        {Array.isArray(highlight.paragraph) ? (
+                                            highlight.paragraph.map((para, paraIndex) => (
+                                                <motion.p
+                                                    key={paraIndex}
+                                                    initial={{ opacity: 0, y: 20 }}
+                                                    whileInView={{ opacity: 1, y: 0 }}
+                                                    transition={{ duration: 0.5, delay: index * 0.2 + 1.0 + (paraIndex * 0.1) }}
+                                                    viewport={{ once: true }}
+                                                    className="text-sm sm:text-base lg:text-lg text-white leading-relaxed font-['Instrument_Sans']"
+                                                >
+                                                    {para}
+                                                </motion.p>
+                                            ))
+                                        ) : (
+                                            <motion.p 
+                                                initial={{ opacity: 0, y: 20 }}
+                                                whileInView={{ opacity: 1, y: 0 }}
+                                                transition={{ duration: 0.5, delay: index * 0.2 + 1.0 }}
+                                                viewport={{ once: true }}
+                                                className="text-sm sm:text-base lg:text-lg text-white leading-relaxed font-['Instrument_Sans']"
+                                            >
+                                                {highlight.paragraph}
+                                            </motion.p>
+                                        )}
+                                    </div>
                                 </motion.div>
                             </motion.div>
                         </motion.div>

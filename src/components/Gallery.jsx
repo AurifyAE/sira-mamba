@@ -1,21 +1,35 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import gallery1 from '../assets/gallery/DSC_1045.JPG'
+import gallery2 from '../assets/gallery/DSC_1051.JPG'
+import gallery3 from '../assets/gallery/DSC_1052.JPG'
+import gallery4 from '../assets/gallery/DSC_1063.JPG'
+import gallery5 from '../assets/gallery/DSC_1107.JPG'
+import gallery6 from '../assets/gallery/DSC_1109.JPG'
+import gallery7 from '../assets/gallery/DSC_1112.JPG'
+import gallery8 from '../assets/gallery/DSC_1225.JPG'
+import gallery9 from '../assets/gallery/DSC_1267.JPG'
+import gallery10 from '../assets/gallery/DSC_1279.JPG'
+import gallery11 from '../assets/gallery/DSC_1388.JPG'
 
 export default function Gallery() {
     const scrollContainerRef = useRef(null)
     const [canScrollLeft, setCanScrollLeft] = useState(false)
     const [canScrollRight, setCanScrollRight] = useState(true)
 
-    // Sample gallery images - replace with actual images
+    // Gallery images from assets
     const galleryImages = [
-        { id: 1, src: '/placeholder.jpg', alt: 'Gallery Image 1' },
-        { id: 2, src: '/placeholder.jpg', alt: 'Gallery Image 2' },
-        { id: 3, src: '/placeholder.jpg', alt: 'Gallery Image 3' },
-        { id: 4, src: '/placeholder.jpg', alt: 'Gallery Image 4' },
-        { id: 5, src: '/placeholder.jpg', alt: 'Gallery Image 5' },
-        { id: 6, src: '/placeholder.jpg', alt: 'Gallery Image 6' },
-        { id: 7, src: '/placeholder.jpg', alt: 'Gallery Image 7' },
-        { id: 8, src: '/placeholder.jpg', alt: 'Gallery Image 8' },
+        { id: 1, src: gallery1, alt: 'Gallery Image 1 - Refinery facility' },
+        { id: 2, src: gallery2, alt: 'Gallery Image 2 - Refinery facility' },
+        { id: 3, src: gallery3, alt: 'Gallery Image 3 - Refinery facility' },
+        { id: 4, src: gallery4, alt: 'Gallery Image 4 - Refinery facility' },
+        { id: 5, src: gallery5, alt: 'Gallery Image 5 - Refinery facility' },
+        { id: 6, src: gallery6, alt: 'Gallery Image 6 - Refinery facility' },
+        { id: 7, src: gallery7, alt: 'Gallery Image 7 - Refinery facility' },
+        { id: 8, src: gallery8, alt: 'Gallery Image 8 - Refinery facility' },
+        { id: 9, src: gallery9, alt: 'Gallery Image 9 - Refinery facility' },
+        { id: 10, src: gallery10, alt: 'Gallery Image 10 - Refinery facility' },
+        { id: 11, src: gallery11, alt: 'Gallery Image 11 - Refinery facility' },
     ]
 
     const scroll = (direction) => {
@@ -63,7 +77,7 @@ export default function Gallery() {
     }, [])
 
     return (
-        <section id="gallery" className="bg-black py-16 md:py-32">
+        <section id="gallery" className="bg-[#282626] py-16 md:py-32">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Gallery Header */}
                 <motion.div
@@ -118,19 +132,13 @@ export default function Gallery() {
                                 viewport={{ once: true }}
                                 className="flex-shrink-0 w-[280px] h-[224px] md:w-[320px] md:h-[256px] lg:w-[400px] lg:h-[320px]"
                             >
-                                <div className="w-full h-full bg-gray-300 rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                    {/* Placeholder - Replace with actual image */}
-                                    <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-400 flex items-center justify-center">
-                                        <span className="text-gray-500 text-sm md:text-base">
-                                            {image.alt}
-                                        </span>
-                                    </div>
-                                    {/* Uncomment below and remove placeholder when you have actual images */}
-                                    {/* <img
+                                <div className="w-full h-full rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                    <img
                                         src={image.src}
                                         alt={image.alt}
                                         className="w-full h-full object-cover"
-                                    /> */}
+                                        loading="lazy"
+                                    />
                                 </div>
                             </motion.div>
                         ))}
@@ -138,7 +146,7 @@ export default function Gallery() {
 
                     {/* Scroll Indicator */}
                     {canScrollRight && (
-                        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-20 h-full bg-gradient-to-l from-black to-transparent pointer-events-none" />
+                        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-20 h-full bg-gradient-to-l from-[#282626] to-transparent pointer-events-none" />
                     )}
                 </div>
             </div>

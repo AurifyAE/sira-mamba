@@ -76,7 +76,7 @@ const ServicePage = () => {
                 </div>
                 {/* grey panel with pointed bottom */}
                 <div
-                  className="pt-40 pb-12 px-8 text-center bg-[#999999] text-black"
+                  className="pt-40 pb-12 px-8 text-center bg-[#FFEECC] text-black"
                   style={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%)' }}
                 >
                   <h3 className="font-playfair font-bold text-3xl leading-tight mb-3">

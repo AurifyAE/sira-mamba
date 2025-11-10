@@ -1,21 +1,31 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import gallery1 from '../assets/gallery/DSC_1045.JPG';
+import gallery2 from '../assets/gallery/DSC_1051.JPG';
+import gallery3 from '../assets/gallery/DSC_1052.JPG';
+import gallery4 from '../assets/gallery/DSC_1063.JPG';
+import gallery5 from '../assets/gallery/DSC_1107.JPG';
+import gallery6 from '../assets/gallery/DSC_1109.JPG';
+import gallery7 from '../assets/gallery/DSC_1112.JPG';
+import gallery8 from '../assets/gallery/DSC_1225.JPG';
+import gallery9 from '../assets/gallery/DSC_1267.JPG';
+import gallery10 from '../assets/gallery/DSC_1279.JPG';
+import gallery11 from '../assets/gallery/DSC_1388.JPG';
 
 const Gallery = () => {
-  // Sample gallery images - replace with actual images from your assets
+  // Gallery images from assets
   const galleryImages = [
-    { id: 1, src: '/placeholder.jpg', alt: 'Gallery Image 1', category: 'all' },
-    { id: 2, src: '/placeholder.jpg', alt: 'Gallery Image 2', category: 'all' },
-    { id: 3, src: '/placeholder.jpg', alt: 'Gallery Image 3', category: 'all' },
-    { id: 4, src: '/placeholder.jpg', alt: 'Gallery Image 4', category: 'all' },
-    { id: 5, src: '/placeholder.jpg', alt: 'Gallery Image 5', category: 'all' },
-    { id: 6, src: '/placeholder.jpg', alt: 'Gallery Image 6', category: 'all' },
-    { id: 7, src: '/placeholder.jpg', alt: 'Gallery Image 7', category: 'all' },
-    { id: 8, src: '/placeholder.jpg', alt: 'Gallery Image 8', category: 'all' },
-    { id: 9, src: '/placeholder.jpg', alt: 'Gallery Image 9', category: 'all' },
-    { id: 10, src: '/placeholder.jpg', alt: 'Gallery Image 10', category: 'all' },
-    { id: 11, src: '/placeholder.jpg', alt: 'Gallery Image 11', category: 'all' },
-    { id: 12, src: '/placeholder.jpg', alt: 'Gallery Image 12', category: 'all' },
+    { id: 1, src: gallery1, alt: 'Gold Refinery Gallery Image 1', category: 'all' },
+    { id: 2, src: gallery2, alt: 'Gold Refinery Gallery Image 2', category: 'all' },
+    { id: 3, src: gallery3, alt: 'Gold Refinery Gallery Image 3', category: 'all' },
+    { id: 4, src: gallery4, alt: 'Gold Refinery Gallery Image 4', category: 'all' },
+    { id: 5, src: gallery5, alt: 'Gold Refinery Gallery Image 5', category: 'all' },
+    { id: 6, src: gallery6, alt: 'Gold Refinery Gallery Image 6', category: 'all' },
+    { id: 7, src: gallery7, alt: 'Gold Refinery Gallery Image 7', category: 'all' },
+    { id: 8, src: gallery8, alt: 'Gold Refinery Gallery Image 8', category: 'all' },
+    { id: 9, src: gallery9, alt: 'Gold Refinery Gallery Image 9', category: 'all' },
+    { id: 10, src: gallery10, alt: 'Gold Refinery Gallery Image 10', category: 'all' },
+    { id: 11, src: gallery11, alt: 'Gold Refinery Gallery Image 11', category: 'all' },
   ];
 
   const [selectedImage, setSelectedImage] = useState(null);
@@ -51,19 +61,12 @@ const Gallery = () => {
               >
                 {/* Image container with equal aspect ratio */}
                 <div className="aspect-square bg-gray-200 relative">
-                  {/* Placeholder - Replace with actual image */}
-                  <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                    <span className="text-gray-500 text-sm text-center px-2">
-                      {image.alt}
-                    </span>
-                  </div>
-                  {/* Uncomment below and remove placeholder when you have actual images */}
-                  {/* <img
+                  <img
                     src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     loading="lazy"
-                  /> */}
+                  />
                   
                   {/* Overlay on hover */}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
@@ -115,17 +118,12 @@ const Gallery = () => {
               </svg>
             </button>
             <div className="w-full h-full flex items-center justify-center">
-              {/* Placeholder - Replace with actual image */}
-              <div className="w-full h-full bg-gray-700 flex items-center justify-center rounded-lg">
-                <span className="text-white text-lg">{selectedImage.alt}</span>
-              </div>
-              {/* Uncomment below and remove placeholder when you have actual images */}
-              {/* <img
+              <img
                 src={selectedImage.src}
                 alt={selectedImage.alt}
                 className="max-w-full max-h-full object-contain rounded-lg"
                 onClick={(e) => e.stopPropagation()}
-              /> */}
+              />
             </div>
           </div>
         </div>

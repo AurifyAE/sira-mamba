@@ -21,11 +21,13 @@ export default function Navbar() {
                     {/* Left-aligned Logo */}
                     <div className="flex-shrink-0">
                         <div className="flex items-center">
-                            <img 
-                                src={Logo} 
-                                alt="SIRA MAMBA Logo" 
-                                className="h-8 w-auto sm:h-10 md:h-16 lg:w-60"
-                            />
+                            <Link to="/">
+                                <img 
+                                    src={Logo} 
+                                    alt="SIRA MAMBA Logo" 
+                                    className="h-8 w-auto sm:h-10 md:h-16 lg:w-60"
+                                />
+                            </Link>
                         </div>
                     </div>
 

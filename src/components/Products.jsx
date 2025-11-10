@@ -27,7 +27,7 @@ export default function Products() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Title */}
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 font-['Kaisei_Tokumin']">
+                    <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 font-['Product_Sans']">
                         Products
                     </h1>
                 </div>
@@ -48,7 +48,7 @@ export default function Products() {
                                 </div>
 
                                 {/* Title */}
-                                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-['Kaisei_Tokumin']">
+                                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-['Product_Sans']">
                                     {product.title}
                                 </h3>
                             </div>

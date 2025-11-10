@@ -18,7 +18,7 @@ function App() {
 
   return (
     <Router>
-      <div className="bg-black">
+      <div className="bg-[#282626]">
         {/* <Banner /> */}
         <Navbar />
         

@@ -1,84 +1,62 @@
-import React from 'react'
-import metalRefinory from '../assets/metalRefinory.jpg'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import smelting from '../assets/about/about-img.jpg';
 
-export default function About() {
-    return (
-        <>
-            <section className="bg-black">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    {/* Centered Headings */}
-                <div className="text-center mb-10">
-                    <h1 className="text-4xl md:text-4xl font-bold text-[#BB8D30] mb-6 font-['Kaisei_Tokumin']">
-                    Trusted Precious Metal Refining Experts in the UAE
-                    </h1>
-                    <h2 className="text-xl md:text-2xl text-white max-w-3xl mx-auto font-['Instrument_Sans']">
-                    World-Class Gold  Refinery | Ethical, Secure, and Professional Metal Refining Services
-                    </h2>
+const About = () => {
+  const navigate = useNavigate();
+
+  const handleDiscoverMore = () => {
+    navigate('/about');
+  };
+
+  return (
+    <section className="relative z-40">
+      <div className="max-w-7xl mx-auto ">
+        {/* Dark grey section with rounded top corners */}
+        <div className="bg-[#282626] rounded-t-[50px] md:rounded-t-[220px] -mt-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 p-8 md:p-20 lg:pt-30 lg:px-30">
+            {/* Left Side - Text Content */}
+            <div className="flex flex-col justify-center space-y-6 md:space-y-8">
+              {/* Headline */}
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight font-['Product_Sans']">
+                <span className="text-[#DCBC7C] block">Pure Gold.</span>
+                <span className="text-[#DCBC7C] block">Perfect Refinement.</span>
+                <span className="text-[#DCBC7C] block">Trusted Bullion.</span>
+              </h2>
+
+              {/* Body Paragraph */}
+              <p className="text-white text-base md:text-lg leading-relaxed max-w-2xl">
+              SIRAMAMBA REFINERY (FZC) is a leading gold and precious-metal refining enterprise based in Sharjah, United Arab Emirates. We specialize in processing, purifying, assaying, minting, and trading gold and related precious metals. Our facility is equipped with state-of-the-art technology, expert metallurgical staff, and rigorous quality control systems to deliver high-purity precious metal products to clients across the globe.
+              </p>
+
+              {/* Discover More Button */}
+              <button
+                onClick={handleDiscoverMore}
+                className="self-start px-8 py-3 md:px-10 md:py-4 bg-[#BB8D30] text-white font-bold text-sm md:text-base rounded-md hover:bg-[#C9A865] transition-colors duration-300 shadow-lg uppercase tracking-wide font-['Product_Sans']"
+              >
+                DISCOVER MORE
+              </button>
+            </div>
+
+            {/* Right Side - Circular Image */}
+            <div className="flex items-center justify-center lg:justify-end">
+              <div className="relative">
+                {/* Circular Image Container */}
+                <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[420px] xl:h-[420px] rounded-full overflow-hidden shadow-2xl relative">
+                  <img
+                    src={smelting}
+                    alt="Gold refining process - molten gold being poured"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center py-10">
-                        {/* Left Side - Heading and Sub Heading */}
-                        <div className="space-y-6 sm:space-y-8">
-                            <div>
-                                <h1 className="text-3xl sm:text-4xl md:text-[45px] font-bold text-white mb-4 sm:mb-6 font-['Kaisei_Tokumin']">
-                                    We are a modern Ethical Gold Refinery
-                                </h1>
-                            </div>
-                            
-                            <div className="space-y-4">
-                                <p className="text-base sm:text-lg text-white leading-relaxed font-['Instrument_Sans']">
-                                Siramamba Gold Refinery, based in SAIF Zone, UAE, is a leading facility specializing in gold refining, assaying, and processing. Committed to ethical sourcing, sustainability, and global standards, we deliver high-purity gold solutions to investors, jewelers, and institutions worldwide.
-                                </p>
-                            </div>
-                        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-                        {/* Right Side - Image */}
-                        <div className="flex justify-center lg:justify-end">
-                            <img
-                                src={metalRefinory}
-                                alt="SiraMamba Gold Refining"
-                                className="w-full max-w-sm sm:max-w-lg rounded-3xl h-auto shadow-2xl"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </section>
+export default About;
 
-            {/* 3 Column Section */}
-            <section className="bg-black py-12 sm:py-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-                        {/* Column 1 */}
-                        <div className="text-left">
-                            <h3 className="text-xl sm:text-3xl font-bold text-[#BB8D30] mb-3 sm:mb-4 font-['Kaisei_Tokumin']">
-                                Our Mission 
-                            </h3>
-                            <p className="text-sm sm:text-lg text-white leading-relaxed font-['Instrument_Sans'] italic">
-                                To set new global benchmarks in precision gold refining and promote responsible practices within the precious metals industry.
-                            </p>
-                        </div>
-
-                        {/* Column 2 */}
-                        <div className="text-left">
-                            <h3 className="text-xl sm:text-3xl font-bold text-[#BB8D30] mb-3 sm:mb-4 font-['Kaisei_Tokumin']">
-                                Our Vision
-                            </h3>
-                            <p className="text-sm sm:text-lg text-white leading-relaxed font-['Instrument_Sans'] italic">
-                                To become the most trusted name in gold refining in the Middle East, serving global clients with transparency and integrity.
-                            </p>
-                        </div>
-
-                        {/* Column 3 */}
-                        <div className="text-left">
-                            <h3 className="text-xl sm:text-3xl font-bold text-[#BB8D30] mb-3 sm:mb-4 font-['Kaisei_Tokumin']">
-                                Our Team
-                            </h3>
-                            <p className="text-sm sm:text-lg text-white leading-relaxed font-['Instrument_Sans'] italic">
-                                Led by industry veterans with decades of expertise in metallurgy and international trade, our team brings excellence to every process, from smelting to final delivery.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </>
-    )
-}
