@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import Logo from '../assets/Logo.svg'
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const location = useLocation()
 
     const navItems = [
         { name: 'About', href: '/about' },
@@ -34,19 +35,21 @@ export default function Navbar() {
                     {/* Desktop Navigation Items - Right Aligned */}
                     <div className="hidden lg:block px-10 py-1">
                         <div className="flex justify-center items-center space-x-4">
-                            {navItems.map((item, index) => (
-                                <React.Fragment key={item.name}>
+                            {navItems.map((item) => {
+                                const isActive = location.pathname === item.href
+                                return (
                                     <Link
+                                        key={item.name}
                                         to={item.href}
-                                        className="text-white hover:text-gray-300 m-0 px-5 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center"
+                                        className={`group relative m-0 px-5 py-2 rounded-full text-sm font-medium flex items-center overflow-hidden transition-all duration-300 ${isActive ? 'text-black' : 'text-white hover:text-black'}`}
                                     >
-                                        {item.name}
+                                        <span
+                                            className={`absolute inset-0 rounded-full bg-[#DCBC7C] transform origin-center transition-transform duration-300 ease-out ${isActive ? 'scale-100 opacity-100' : 'scale-0 opacity-0 group-hover:scale-80 group-hover:opacity-100'}`}
+                                        />
+                                        <span className="relative z-10">{item.name}</span>
                                     </Link>
-                                    {/* {index < navItems.length - 1 && (
-                                        <span className="bg-white mx-1 w-1 h-1 rotate-45"></span>
-                                    )} */}
-                                </React.Fragment>
-                            ))}
+                                )
+                            })}
                         </div>
                     </div>
 
@@ -88,16 +91,19 @@ export default function Navbar() {
             {/* Mobile Navigation Menu */}
             <div className={`${isMenuOpen ? 'block' : 'hidden'} lg:hidden`}>
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black border-t border-gray-700">
-                    {navItems.map((item) => (
-                        <Link
-                            key={item.name}
-                            to={item.href}
-                            className="text-white hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            {item.name}
-                        </Link>
-                    ))}
+                    {navItems.map((item) => {
+                        const isActive = location.pathname === item.href
+                        return (
+                            <Link
+                                key={item.name}
+                                to={item.href}
+                                className={`block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${isActive ? 'text-[#DCBC7C] bg-white/10' : 'text-white hover:text-black hover:bg-[#DCBC7C]/30'}`}
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                {item.name}
+                            </Link>
+                        )
+                    })}
                 </div>
             </div>
         </nav>

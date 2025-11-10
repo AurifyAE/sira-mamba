@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import productBanner from '../assets/products/product-banner.jpg';
 import { products } from '../data/products';
 
 
@@ -27,12 +28,20 @@ const ProductGrid = () => {
     return (
         <div className="min-h-screen bg-white">
             {/* Banner Section */}
-            <section className="bg-[#FFEECC] pt-30 py-8">
-                <h2 className="text-3xl font-bold text-center text-gray-900 font-['Product_Sans']">Our Products</h2>
+            <section className="relative bg-cover bg-center bg-no-repeat h-[420px]" 
+                     style={{ backgroundImage: `url(${productBanner})` }}>
+                <div className="absolute inset-0 bg-black/80"></div>
+                <div className="relative z-10 flex items-end justify-center h-full">
+                    <div className="text-white max-w-6xl p-20 w-full flex justify-center">
+                        <h1 className="text-3xl sm:text-3xl lg:text-4xl font-bold mb-6 leading-tight font-['Product_Sans'] text-center w-full">
+                            Our Products.
+                        </h1>
+                    </div>
+                </div>
             </section>
 
             {/* Products List Section */}
-            <section className="py-16 px-6 bg-[#F1F0E8]">
+            <section className="py-16 md:py-30 px-6 bg-[#F1F0E8]">
                 <div className="max-w-6xl mx-auto">
                     {products.map((product) => (
                         <div key={product.id} className="mb-16 last:mb-0">
