@@ -344,7 +344,7 @@ const Contact = () => {
                   Contact Information
                 </h2>
                 <div className="space-y-4">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-base text-gray-600">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between text-base text-gray-600">
                     <div className="flex flex-col sm:flex-col gap-0">
                       <div
                         onClick={() => window.location.href = 'tel:+971525647522'}
