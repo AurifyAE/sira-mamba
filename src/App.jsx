@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Banner from './components/Banner'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 
 // Import pages
 import Home from './pages/Home'
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="bg-[#282626]">
         {/* <Banner /> */}
         <Navbar />
