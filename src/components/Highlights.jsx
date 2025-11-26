@@ -38,7 +38,7 @@ export default function Highlights() {
     ]
 
     return (
-        <section id="services" className="bg-[#282626] py-16 md:py-32">
+        <section id="services" className="bg-[#282626] px-10 md:px-0 py-16 md:py-32">
             <div className="mx-auto">
                 {/* Section Heading */}
                 <motion.div
@@ -73,20 +73,27 @@ export default function Highlights() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
                                 viewport={{ once: true }}
-                                className="flex-shrink-0 z-10 flex items-center justify-center w-1/3"
+                                className="flex-shrink-0 z-10 flex items-center justify-center w-full md:w-1/3"
                             >
                                 <div className="flex flex-col items-center">
                                     <img
                                         src={highlight.image}
                                         alt={highlight.heading}
-                                        className="w-[200px] h-[220px] md:w-[250px] md:h-[400px] lg:w-[300px] lg:h-[450px] object-cover rounded-[30px] sm:rounded-[60px]"
+                                        className="w-[300px] h-[350px] md:w-[250px] md:h-[400px] lg:w-[300px] lg:h-[450px] object-cover rounded-[30px] sm:rounded-[60px]"
                                     />
                                     {/* Animated vertical line below image */}
                                     {index !== highlights.length - 1 && (
                                         <div className="relative h-20">
                                             <motion.div
                                                 initial={{ opacity: 0, height: 0 }}
-                                                whileInView={{ opacity: 1, height: [0, 200, 0] }}
+                                                whileInView={{
+                                                    opacity: 1,
+                                                    height: [
+                                                        0,
+                                                        typeof window !== 'undefined' && window.innerWidth < 769 ? 120 : 200,
+                                                        0,
+                                                    ],
+                                                }}
                                                 transition={{
                                                     duration: 2,
                                                     delay: index * 0.15 + 0.4,
@@ -108,7 +115,7 @@ export default function Highlights() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.6, delay: index * 0.2 + 0.2 }}
                                 viewport={{ once: true }}
-                                className={`w-full md:w-2/3 h-[500px] md:h-[285px] bg-[#1A1A1A] opacity-50 rounded-3xl ${index % 2 === 0 ? 'lg:rounded-l-full' : 'lg:rounded-r-full'} flex items-center justify-center p-6 sm:p-12 backdrop-blur-[20px] shadow-[2px_1px_2px_#F2F2F280,-2px_-1px_2px_#F2F2F280]`}
+                                className={`w-full md:w-2/3 h-[300px] md:h-[285px] bg-[#1A1A1A] opacity-50 rounded-3xl ${index % 2 === 0 ? 'lg:rounded-l-full' : 'lg:rounded-r-full'} flex items-center justify-center p-6 sm:p-12 backdrop-blur-[20px] shadow-[2px_1px_2px_#F2F2F280,-2px_-1px_2px_#F2F2F280]`}
                             >
                                 {/* Content */}
                                 <motion.div 

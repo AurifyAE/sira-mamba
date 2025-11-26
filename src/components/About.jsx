@@ -13,8 +13,8 @@ const About = () => {
     <section className="relative z-40">
       <div className="max-w-7xl mx-auto ">
         {/* Dark grey section with rounded top corners */}
-        <div className="bg-[#282626] rounded-t-[50px] md:rounded-t-[220px] -mt-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 p-8 md:p-20 lg:pt-30 lg:px-30">
+        <div className="bg-[#282626] rounded-t-[50px] md:rounded-t-[250px] -mt-9 md:-mt-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 p-12 md:px-30 md:py-25 lg:pt-30 lg:px-30">
             {/* Left Side - Text Content */}
             <div className="flex flex-col justify-center space-y-6 md:space-y-8">
               {/* Headline */}

@@ -35,12 +35,12 @@ const Accreditations = () => {
         {/* Accreditations List */}
         <section className="py-16 bg-[#F7F7F7]">
           <div className="max-w-5xl mx-auto px-4">
-            <div className="flex gap-4 relative">
+            <div className="flex gap-1 md:gap-4 relative">
               {/* Rotated CERTIFICATES Heading */}
               <div className="flex-shrink-0 flex items-center">
-                <div className="flex items-center justify-center" style={{ width: '60px', height: '500px' }}>
+                <div className="flex items-center justify-center w-10 md:w-15 h-[500px]" >
                   <h2 
-                    className="text-lg md:text-6xl font-bold font-['Product_Sans'] whitespace-nowrap tracking-widest" 
+                    className="text-4xl md:text-6xl font-bold font-['Product_Sans'] whitespace-nowrap tracking-widest" 
                     style={{ 
                       transform: 'rotate(-90deg)',
                       transformOrigin: 'center',
@@ -58,13 +58,13 @@ const Accreditations = () => {
                   <tbody>
                     {items.map((item, i) => (
                       <tr key={i} className="bg-white">
-                        <td className="w-3/4 px-6 py-4 align-middle">
+                        <td className="w-3/4 px-3 md:px-6 py-2 md:py-4 align-middle">
                           <div className="flex items-start gap-3">
                            
                             <span className="text-sm sm:text-base text-gray-900">{item.text}</span>
                           </div>
                         </td>
-                        <td className="w-1/4 px-6 py-4 text-right align-middle">
+                        <td className="w-1/4 px-3 md:px-6 py-2 md:py-4 text-right align-middle">
                           {item.file ? (
                             <a
                               href={item.file}

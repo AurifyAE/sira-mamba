@@ -18,7 +18,7 @@ export default function Navbar() {
     return (
         <nav className="bg-black opacity-80 fixed top-0 inset-x-0 z-50 font-['Instrument_Sans'] shadow-[0_1px_0_#f2f2f280]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-20">
+                <div className="flex justify-between items-center h-15 md:h-20">
                     {/* Left-aligned Logo */}
                     <div className="flex-shrink-0">
                         <div className="flex items-center">
@@ -26,7 +26,7 @@ export default function Navbar() {
                                 <img 
                                     src={Logo} 
                                     alt="SIRA MAMBA Logo" 
-                                    className="h-8 w-auto sm:h-10 md:h-16 lg:w-60"
+                                    className="h-12 w-auto md:h-16 lg:w-60"
                                 />
                             </Link>
                         </div>

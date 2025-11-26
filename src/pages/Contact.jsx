@@ -116,23 +116,23 @@ const Contact = () => {
       </section> */}
 
       {/* Contact Form & Info */}
-      <section className="pt-30 py-20">
+      <section className="pt-20 md:pt-30 py-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="py-20 bg-black relative">
               <div className="max-w-6xl mx-auto px-4">
-                <div className="flex items-center justify-center min-h-[600px]">
+                <div className="flex items-center justify-center h-32 md:min-h-[600px]">
                   <div className="text-white text-center">
-                    <h2 className="text-2xl text-white mb-4 tracking-wide font-['Product_Sans']">
+                    <h2 className="text-xl md:text-2xl text-white mb-4 tracking-wide font-['Product_Sans']">
                       WE'D LOVE TO
                     </h2>
-                    <h1 className="text-5xl sm:text-6xl lg:text-6xl font-bold text-[#DCBC7C] tracking-tight font-['Product_Sans'] mb-8">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#DCBC7C] tracking-tight font-['Product_Sans'] mb-8">
                       Hear From You
                     </h1>
                   </div>
                 </div>
                 <div className="absolute bottom-10 left-0 right-0 flex items-end justify-center text-center">
-                  <p className="text-lg text-gray-300">
+                  <p className="text-sm md:text-lg text-gray-300">
                     Get in touch for more details
                   </p>
                 </div>

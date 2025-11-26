@@ -1,36 +1,15 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import gallery1 from '../assets/gallery/DSC_1045.JPG'
-import gallery2 from '../assets/gallery/DSC_1051.JPG'
-import gallery3 from '../assets/gallery/DSC_1052.JPG'
-import gallery4 from '../assets/gallery/DSC_1063.JPG'
-import gallery5 from '../assets/gallery/DSC_1107.JPG'
-import gallery6 from '../assets/gallery/DSC_1109.JPG'
-import gallery7 from '../assets/gallery/DSC_1112.JPG'
-import gallery8 from '../assets/gallery/DSC_1225.JPG'
-import gallery9 from '../assets/gallery/DSC_1267.JPG'
-import gallery10 from '../assets/gallery/DSC_1279.JPG'
-import gallery11 from '../assets/gallery/DSC_1388.JPG'
+import { galleryImages as galleryImageData } from '../data/galleryImages'
+import { Link } from 'react-router-dom'
 
 export default function Gallery() {
     const scrollContainerRef = useRef(null)
     const [canScrollLeft, setCanScrollLeft] = useState(false)
     const [canScrollRight, setCanScrollRight] = useState(true)
 
-    // Gallery images from assets
-    const galleryImages = [
-        { id: 1, src: gallery1, alt: 'Gallery Image 1 - Refinery facility' },
-        { id: 2, src: gallery2, alt: 'Gallery Image 2 - Refinery facility' },
-        { id: 3, src: gallery3, alt: 'Gallery Image 3 - Refinery facility' },
-        { id: 4, src: gallery4, alt: 'Gallery Image 4 - Refinery facility' },
-        { id: 5, src: gallery5, alt: 'Gallery Image 5 - Refinery facility' },
-        { id: 6, src: gallery6, alt: 'Gallery Image 6 - Refinery facility' },
-        { id: 7, src: gallery7, alt: 'Gallery Image 7 - Refinery facility' },
-        { id: 8, src: gallery8, alt: 'Gallery Image 8 - Refinery facility' },
-        { id: 9, src: gallery9, alt: 'Gallery Image 9 - Refinery facility' },
-        { id: 10, src: gallery10, alt: 'Gallery Image 10 - Refinery facility' },
-        { id: 11, src: gallery11, alt: 'Gallery Image 11 - Refinery facility' },
-    ]
+    // Gallery images from assets (limit for carousel)
+    const galleryImages = galleryImageData.slice(0, 12)
 
     const scroll = (direction) => {
         const container = scrollContainerRef.current
@@ -92,18 +71,13 @@ export default function Gallery() {
                     </h2>
                     
                     {/* Navigation Button */}
-                    <button
-                        onClick={() => scroll('right')}
-                        disabled={!canScrollRight}
-                        className={`w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#1A1A1A] flex items-center justify-center transition-all duration-200 ${
-                            canScrollRight 
-                                ? 'hover:bg-[#2A2A2A] cursor-pointer shadow-[2px_1px_2px_#F2F2F280,-2px_-1px_2px_#F2F2F280]' 
-                                : 'opacity-50 cursor-not-allowed'
-                        }`}
-                        aria-label="Scroll right"
+                    <Link
+                        to="/gallery"
+                        className={`w-10 h-10 md:w-14 md:h-14 rounded-full bg-[#1A1A1A] flex items-center justify-center transition-all duration-200 hover:bg-[#2A2A2A] cursor-pointer shadow-[2px_1px_2px_#F2F2F280,-2px_-1px_2px_#F2F2F280]`}
+                        aria-label="Go to gallery page"
                     >
                         <svg
-                            className="w-6 h-6 md:w-7 md:h-7 text-white"
+                            className="w-5 h-5 md:w-7 md:h-7 text-white"
                             fill="none"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -113,7 +87,7 @@ export default function Gallery() {
                         >
                             <path d="M9 5l7 7-7 7" />
                         </svg>
-                    </button>
+                    </Link>
                 </motion.div>
 
                 {/* Scrollable Gallery Container */}

@@ -26,7 +26,7 @@ export default function Hero() {
     if (windowWidth >= 1024) return '-6%'  // lg
     if (windowWidth >= 768) return '-2%'   // md
     if (windowWidth >= 640) return '-5%'   // sm
-    return '-12%'                          // mobile
+    return '-19%'                          // mobile
   }
 
   // Calculate responsive positions for right half
@@ -125,7 +125,7 @@ export default function Hero() {
     <section id="home">
       {/* ---------------- HERO SECTION ---------------- */}
       <div
-        className="relative h-[50vh] sm:h-[60vh] md:h-[80vh] lg:h-screen overflow-hidden cursor-pointer"
+        className="relative h-[60vh] md:h-[80vh] lg:h-screen overflow-hidden cursor-pointer"
         onClick={handleHeroClick}
       >
         {/* Background Video */}
@@ -140,6 +140,8 @@ export default function Hero() {
           Your browser does not support the video tag.
         </video>
 
+        {/* Gradient Overlay */}
+        <div className="absolute md:hidden inset-0 z-[30] bg-gradient-to-r from-black/70 via-black/30 to-transparent " />
         {/* Left Torn Half */}
         <motion.div
           initial={{ x: getLeftInitialX() }}
@@ -182,7 +184,7 @@ export default function Hero() {
             initial={{ opacity: 1, scale: 1 }}
             animate={isSplit ? { opacity: 0, scale: 0.8 } : { opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="absolute z-30 right-[15%] bottom-[15%] sm:right-[18%] sm:bottom-[18%] md:right-[25%] md:bottom-[25%] lg:right-[33%] lg:bottom-[22%]"
+            className="absolute z-30 right-[20%] bottom-[23%] sm:right-[18%] sm:bottom-[18%] md:right-[25%] md:bottom-[25%] lg:right-[33%] lg:bottom-[22%]"
           >
             <img
               src={ClickHere}
@@ -198,11 +200,11 @@ export default function Hero() {
             {/* Main Headlines Container */}
             <div className="relative flex flex-col items-center">
               {/* Headlines Row - Flex row on desktop, column on mobile/tablet */}
-              <div className="flex flex-col lg:flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-8 mb-4 sm:mb-6 md:mb-8">
+              <div className="flex flex-col lg:flex-row items-center justify-center gap-0 md:gap-4 lg:gap-8 mb-2 sm:mb-4 md:mb-8">
                 {/* Left Heading - Starts at left, animates to center */}
                 <motion.h1
                   initial={{ x: getLeftH1InitialX(), opacity: 1 }}
-                  animate={{ 
+                  animate={{
                     x: isSplit ? 0 : getLeftH1AnimateX(),
                     opacity: 1
                   }}
@@ -248,13 +250,13 @@ export default function Hero() {
         </div>
 
         {/* WhatsApp and Call Us Buttons - Bottom Right */}
-        <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-25 md:right-8 z-40 flex flex-col sm:flex-row gap-3">
+        <div className="absolute bottom-5 right-4 sm:bottom-6 sm:right-6 md:bottom-25 md:right-8 z-100 flex flex-row gap-3">
           {/* WhatsApp Button */}
           <a
             href="https://wa.me/971542650191"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 sm:px-5 sm:py-2 bg-[#DCBC7C] text-black rounded-3xl hover:bg-[#D4C5A8] transition-colors duration-300 shadow-lg font-medium text-sm"
+            className="flex items-center gap-2 py-1.5 px-4 sm:px-5 sm:py-2 bg-[#DCBC7C] text-black rounded-3xl hover:bg-[#D4C5A8] transition-colors duration-300 shadow-lg font-medium text-sm"
             onClick={(e) => e.stopPropagation()}
           >
             <span>Whatsapp</span>
@@ -271,7 +273,7 @@ export default function Hero() {
           {/* Call Us Button */}
           <a
             href="tel:+971542650191"
-            className="flex items-center gap-2 px-4 sm:px-5 sm:py-2 bg-[#DCBC7C] text-black rounded-3xl hover:bg-[#D4C5A8] transition-colors duration-300 shadow-lg font-medium text-sm"
+            className="flex items-center gap-2 py-1.5 px-4 sm:px-5 sm:py-2 bg-[#DCBC7C] text-black rounded-3xl hover:bg-[#D4C5A8] transition-colors duration-300 shadow-lg font-medium text-sm"
             onClick={(e) => e.stopPropagation()}
           >
             <span>Call Us</span>

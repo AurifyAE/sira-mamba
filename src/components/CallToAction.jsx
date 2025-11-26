@@ -3,7 +3,7 @@ import ctaImage from '../assets/ctaImage.jpg'
 
 export default function CallToAction() {
     return (
-        <section className="relative w-full h-screen">
+        <section className="relative w-full h-96 md:h-[60vh] lg:h-screen">
             {/* Background Image */}
             <img
                 src={ctaImage}
