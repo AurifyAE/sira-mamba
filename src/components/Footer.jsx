@@ -1,10 +1,11 @@
 import React from 'react'
 import logoWhite from '../assets/logoWhite.svg'
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
     return (
         <footer className="bg-black pt-12 sm:pt-16 font-['Instrument_Sans']">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-14">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8">
                     {/* First Column - Logo and Copyright */}
                     <div className="md:col-span-4">
@@ -14,14 +15,9 @@ export default function Footer() {
                                 <img
                                     src={logoWhite}
                                     alt="SiraMamba Logo"
-                                    className="h-10 sm:h-12 w-auto"
+                                    className="h-12 sm:h-16 w-auto"
                                 />
                             </div>
-
-                            {/* Copyright */}
-                            <p className="text-gray-400 text-xs sm:text-sm">
-                                © 2025 SiraMamba Gold Refinery, Made by 3RCreative
-                            </p>
                         </div>
                     </div>
 
@@ -33,19 +29,24 @@ export default function Footer() {
                             </h3>
                             <ul className="space-y-2">
                                 <li>
-                                    <a href="#home" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base">
+                                    <Link to="/" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base">
                                         Home
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="#services" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base">
+                                    <Link to="/services" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base">
                                         Our Services
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="#accreditations" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base">
+                                    <Link to="/accreditations" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base">
                                         Our Accreditations
-                                    </a>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/contact" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base">
+                                        Contact
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -58,21 +59,27 @@ export default function Footer() {
                                 Quick Links
                             </h3>
                             <ul className="space-y-2">
-                                <li>
-                                    <a href="#account" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base">
+                                {/* <li>
+                                    <Link to="#account" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base">
                                         Account Opening
-                                    </a>
-                                </li>
+                                    </Link>
+                                </li> */}
                                 <li>
-                                    <a href="#sustainability" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base">
+                                    <Link to="/sustainability" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base">
                                         Sustainability
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="#contact" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base">
-                                        Contact
-                                    </a>
+                                    <Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base">
+                                        Privacy Policy
+                                    </Link>
                                 </li>
+                                <li>
+                                    <Link to="/terms-conditions" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm sm:text-base">
+                                        Terms & Conditions
+                                    </Link>
+                                </li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -99,16 +106,20 @@ export default function Footer() {
                                     >
                                         info@siramamba.ae
                                     </p>
-                                    <p className="inline text-gray-400 text-sm sm:text-base cursor-pointer"
-                                    onClick={() => window.location.href = 'tel:+971525647522'}
-                                    >
-                                        +971 52 564 7522,
-                                    </p>
-                                    <p className="mt-1 md:mt-0 lg:mt-1 text-gray-400 text-sm sm:text-base cursor-pointer"
-                                    onClick={() => window.location.href = 'tel:+971565956353'}
-                                    >
-                                        +971 56 595 6353
-                                    </p>
+                                    <span className="flex flex-wrap items-center gap-x-2 text-gray-400 text-sm sm:text-base">
+                                        <span
+                                            className="cursor-pointer"
+                                            onClick={() => window.location.href = 'tel:+971525647522'}
+                                        >
+                                            +971 52 564 7522,
+                                        </span>
+                                        <span
+                                            className="cursor-pointer"
+                                            onClick={() => window.location.href = 'tel:+971565956353'}
+                                        >
+                                            +971 56 595 6353
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>

@@ -14,6 +14,9 @@ import ProductDetails from './pages/ProductDetails'
 import About from './pages/About'
 import Accreditations from './pages/Accreditations'
 import Gallery from './pages/Gallery'
+import Sustainability from './pages/Sustainability'
+import TermsConditions from './pages/TermsConditions'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 
 function App() {
 
@@ -33,6 +36,9 @@ function App() {
           <Route path="/accreditations" element={<Accreditations />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/sustainability"element={<Sustainability />} />
+          <Route path="/privacy-policy"element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions"element={<TermsConditions />} />
         </Routes>
         
         <Footer />

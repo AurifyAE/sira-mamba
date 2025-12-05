@@ -32,8 +32,8 @@ const About = () => {
         <section className="relative bg-cover bg-center bg-no-repeat h-[520px]" 
                      style={{ backgroundImage: `url(${aboutBanner})` }}>
                 <div className="absolute inset-0 bg-black/40"></div>
-                <div className="relative z-10 flex items-end justify-start h-full">
-                    <div className="text-white max-w-6xl p-20">
+                <div className="relative h-full z-10 flex items-end justify-start max-w-7xl mx-auto px-4 sm:px-10 lg:px-14 py-20">
+                <div className="text-white">
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-['Product_Sans']">
                         Our Story.
                         </h1>

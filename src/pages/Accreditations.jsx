@@ -1,20 +1,23 @@
 import React from 'react'
 import accBanner from '../assets/accreditations/acc-banner.jpg'
+import qualityManagement from '../assets/accreditations/downloadFiles/SRF ISO CERTICATE.pdf'
+import chamberOfCommerce from '../assets/accreditations/downloadFiles/Document_2025-10-06_140657.pdf'
+import precursorsAndChemicals from '../assets/accreditations/downloadFiles/RegistrationCertificate_5456.pdf'
 
 const Accreditations = () => {
   // Accreditation rows and their downloadable files (when available)
   const items = [
     {
       text: 'ISO 9001: Quality Management System',
-      file: '/src/assets/accreditations/downloadFiles/SRF ISO CERTICATE.pdf',
+      file: qualityManagement,
     },
     {
       text: 'Chamber of Commerce Certificate - Sharjah Government',
-      file: '/src/assets/accreditations/downloadFiles/Document_2025-10-06_140657.pdf',
+      file: chamberOfCommerce,
     },
     {
       text: 'Registration for Precursors & Chemicals End User (MOHAP)',
-      file: '/src/assets/accreditations/downloadFiles/RegistrationCertificate_5456.pdf',
+      file: precursorsAndChemicals,
     },
   ]
 
@@ -23,8 +26,8 @@ const Accreditations = () => {
         <section className="relative bg-cover bg-center bg-no-repeat h-[520px]" 
           style={{ backgroundImage: `url(${accBanner})` }}>
           <div className="absolute inset-0 bg-black/60"></div>
-          <div className="relative z-10 flex items-end justify-start max-w-2xl h-full">
-            <div className="text-white max-w-6xl p-20">
+          <div className="relative h-full z-10 flex items-end justify-start max-w-7xl mx-auto px-4 sm:px-10 lg:px-14 py-20">
+                <div className="text-white">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-['Product_Sans']">
                 Accreditations.
                 </h1>

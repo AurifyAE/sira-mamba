@@ -123,18 +123,18 @@ const Contact = () => {
               <div className="max-w-6xl mx-auto px-4">
                 <div className="flex items-center justify-center h-32 md:min-h-[600px]">
                   <div className="text-white text-center">
-                    <h2 className="text-xl md:text-2xl text-white mb-4 tracking-wide font-['Product_Sans']">
-                      WE'D LOVE TO
+                    <h2 className="text-base md:text-lg text-white mb-1 tracking-wide font-['Product_Sans']">
+                      Have a question or need guidance? 
                     </h2>
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#DCBC7C] tracking-tight font-['Product_Sans'] mb-8">
-                      Hear From You
+                      We're just a message away.
                     </h1>
                   </div>
                 </div>
                 <div className="absolute bottom-10 left-0 right-0 flex items-end justify-center text-center">
-                  <p className="text-sm md:text-lg text-gray-300">
+                  {/* <p className="text-sm md:text-lg text-gray-300">
                     Get in touch for more details
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div> 
