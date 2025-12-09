@@ -4,6 +4,7 @@ import Banner from './components/Banner'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import { SEO } from './SEO'
 
 // Import pages
 import Home from './pages/Home'
@@ -19,14 +20,14 @@ import TermsConditions from './pages/TermsConditions'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 
 function App() {
-
   return (
     <Router>
       <ScrollToTop />
+      <SEO />
       <div className="bg-[#282626]">
         {/* <Banner /> */}
         <Navbar />
-        
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -36,11 +37,11 @@ function App() {
           <Route path="/accreditations" element={<Accreditations />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/product/:id" element={<ProductDetails />} />
-          <Route path="/sustainability"element={<Sustainability />} />
-          <Route path="/privacy-policy"element={<PrivacyPolicy />} />
-          <Route path="/terms-conditions"element={<TermsConditions />} />
+          <Route path="/sustainability" element={<Sustainability />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
         </Routes>
-        
+
         <Footer />
       </div>
     </Router>
