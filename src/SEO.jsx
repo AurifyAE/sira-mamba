@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { blogPosts } from './data/blogs'
 
 // Basic per-route SEO config – adjust copy as needed
 const seoConfig = {
@@ -67,6 +68,14 @@ const seoConfig = {
       'sustainable refining, responsible gold sourcing, ethical refinery UAE, ESG metals',
     canonical: 'https://siramamba.ae/sustainability',
   },
+  '/blogs': {
+    title: 'Siramamba Blog | Gold Refining Insights & Bullion Updates',
+    description:
+      'Read insights on gold refining, bullion products, sustainability, and operations from the Siramamba team in the UAE.',
+    keywords:
+      'gold refining blog, bullion insights, precious metals news, refinery updates UAE, Siramamba blog',
+    canonical: 'https://siramamba.ae/blogs',
+  },
   '/privacy-policy': {
     title: 'Privacy Policy | Sira Mamba Refinery',
     description:
@@ -97,7 +106,23 @@ export function SEO() {
 
   useEffect(() => {
     const path = location.pathname
-    const config = seoConfig[path] || {}
+    let config = seoConfig[path] || {}
+
+    if (!config && path.startsWith('/blogs/')) {
+      const slug = path.split('/')[2]
+      const blog = blogPosts.find((item) => item.slug === slug)
+      if (blog) {
+        config = {
+          title: `${blog.title} | Siramamba Blog`,
+          description: blog.description,
+          keywords: blog.tags?.join(', ') || DEFAULT_KEYWORDS,
+          canonical: `${BASE_URL}/blogs/${slug}`,
+        }
+      } else {
+        // fallback to blogs listing if slug not matched
+        config = seoConfig['/blogs'] || {}
+      }
+    }
 
     const title = config.title || DEFAULT_TITLE
     const description = config.description || DEFAULT_DESCRIPTION

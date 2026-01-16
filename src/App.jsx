@@ -18,6 +18,8 @@ import Gallery from './pages/Gallery'
 import Sustainability from './pages/Sustainability'
 import TermsConditions from './pages/TermsConditions'
 import PrivacyPolicy from './pages/PrivacyPolicy'
+import Blogs from './pages/Blogs'
+import BlogsContent from './pages/BlogsContent'
 
 function App() {
   return (
@@ -40,6 +42,8 @@ function App() {
           <Route path="/sustainability" element={<Sustainability />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:slug" element={<BlogsContent />} />
         </Routes>
 
         <Footer />
