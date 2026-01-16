@@ -128,9 +128,17 @@ export default function Footer() {
             </div>
             {/* Bottom Copyright Strip */}
             <div className="mt-12 sm:mt-16 border-t border-gray-800">
-                <p className="text-center text-gray-400 text-xs sm:text-sm py-4">
-                    © 2025 SiraMamba Gold Refinery , Made by 3RCreative
-                </p>
+            <p className="text-center text-gray-400 text-xs sm:text-sm py-4">
+            © 2026 SiraMamba Gold Refinery, Made by{" "}
+                <Link
+                    to="https://creative3r.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-white cursor-pointer"
+                >
+                    3RCreative
+                </Link>
+            </p>
             </div>
         </footer>
     )

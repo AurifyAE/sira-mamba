@@ -1,5 +1,6 @@
 import React from 'react'
 import ctaImage from '../assets/ctaImage.jpg'
+import { Link } from 'react-router-dom'
 
 export default function CallToAction() {
     return (
@@ -25,8 +26,7 @@ export default function CallToAction() {
                     <div className="w-full lg:w-[50%] text-center lg:text-left flex flex-col items-center lg:items-start justify-center text-white gap-6 sm:gap-8">
                     {/* Heading */}
                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-['Product_Sans']">
-                        Ethical Sourcing and
-                        Sustainability
+                            Corporate Responsibility and Sustainability
                         </h1>
 
                     {/* Paragraph */}
@@ -35,9 +35,9 @@ export default function CallToAction() {
                         </p>
 
                     {/* Button */}
-                        <button className="bg-[#BB8D30] backdrop-blur-[5px] hover:bg-[#bb8d30c5] text-white py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg transition-all duration-300 hover:shadow-[.2px_0.5px_1px_#F2F2F280,-.2px_-0.5px_1px_#F2F2F280]">
+                        <Link to="/sustainability" className="bg-[#BB8D30] backdrop-blur-[5px] hover:bg-[#bb8d30c5] text-white py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg transition-all duration-300 hover:shadow-[.2px_0.5px_1px_#F2F2F280,-.2px_-0.5px_1px_#F2F2F280]">
                             Click to know how
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>

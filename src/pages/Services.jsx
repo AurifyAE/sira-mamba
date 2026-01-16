@@ -40,6 +40,16 @@ const ServicePage = () => {
     },
   ];
 
+      // Function to handle navigation to product details
+      const handleEnquiry = (serviceId) => {
+        const service = featuredServices[serviceId];
+        const phoneNumber = "971525647522"; // Your WhatsApp number, no +
+        const message = `Hello, I am interested in the following service:\n\nService: ${service?.title[0]} ${service?.title[1]}\n\nPlease provide me with more information about pricing, availability, and purchasing process.`;
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+    };
+
+
   return (
     <div className="min-h-screen bg-white">
         <section className="relative h-[520px]">
@@ -84,12 +94,11 @@ const ServicePage = () => {
                   </h3>
                   <p className="text-base text-justify leading-5 text-gray-800 p-4 mb-6">{item.description}</p>
                   <div className="flex justify-center">
-                    <span
-                      className="inline-block text-sm px-6 py-2 rounded-2xl bg-[#DCBC7C] text-black shadow-xl"
-                     
-                    >
-                      {item.cta}
-                    </span>
+                    <button onClick={() => handleEnquiry(idx)}>
+                      <span className="inline-block text-sm px-6 py-2 rounded-2xl bg-[#DCBC7C] text-black shadow-xl cursor-pointer">
+                        {item.cta}
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>

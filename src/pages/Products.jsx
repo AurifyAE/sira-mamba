@@ -10,7 +10,7 @@ const ProductGrid = () => {
     // Function to handle navigation to product details
     const handleShopNow = (productId) => {
         const product = products.find(p => p.id === productId);
-        const phoneNumber = "919072839370"; // Your WhatsApp number, no +
+        const phoneNumber = "971525647522"; // Your WhatsApp number, no +
         const message = `Hello, I am interested in the following product:\n\nProduct: ${product?.name}\n\nPlease provide me with more information about pricing, availability, and purchasing process.`;
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
