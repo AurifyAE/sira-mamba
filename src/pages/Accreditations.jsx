@@ -3,6 +3,8 @@ import accBanner from '../assets/accreditations/acc-banner.jpg'
 import qualityManagement from '../assets/accreditations/downloadFiles/SRF ISO CERTICATE.pdf'
 import chamberOfCommerce from '../assets/accreditations/downloadFiles/Document_2025-10-06_140657.pdf'
 import precursorsAndChemicals from '../assets/accreditations/downloadFiles/RegistrationCertificate_5456.pdf'
+import goldSupplyChainPolicy from '../assets/accreditations/downloadFiles/Gold_Supply_Chain_Policy_2026.pdf'
+import grievanceMechanismPolicy from '../assets/accreditations/downloadFiles/Grievance_Mechanism_Policy_2026.pdf'
 
 const Accreditations = () => {
   // Accreditation rows and their downloadable files (when available)
@@ -18,6 +20,14 @@ const Accreditations = () => {
     {
       text: 'Registration for Precursors & Chemicals End User (MOHAP)',
       file: precursorsAndChemicals,
+    },
+    {
+      text: 'Gold Supply Chain Policy 2026',
+      file: goldSupplyChainPolicy,
+    },
+    {
+      text: 'Grievance Mechanism Policy 2026',
+      file: grievanceMechanismPolicy,
     },
   ]
 
